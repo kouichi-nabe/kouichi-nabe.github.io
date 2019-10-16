@@ -1,0 +1,21 @@
+@import "color";
+
+.app-desc-wrapper {
+
+  .app-top {
+    background-image: url(../images/chatspace-user.jpg);
+    &__cover {
+      position: relative;
+      .app-name-chat {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 8rem;
+        font-family: 'Josefin Sans', "Hiragino Kaku Gohtic ProN", Meiryo, sans-serif;
+        letter-spacing: 5px;
+        color: $normal_font;
+      }
+    }
+  }
+}

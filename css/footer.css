@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+
+.footer {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  left: 60px;
+}
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+}
+.footer-left {
+  float: left;
+}
+.footer-left p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.footer-left p span {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+.footer-right {
+  float: right;
+}
+.pagetop {
+	text-decoration: none;
+	cursor: pointer;
+}
+.pagetop:hover {
+  opacity: 0.7;
+	text-decoration: none;
+}
+.pagetop img {
+  width: 16px;
+  height: 16px;
+}

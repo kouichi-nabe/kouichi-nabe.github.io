@@ -1,0 +1,275 @@
+@import "color";
+
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1068px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@-webkit-keyframes anime-color {
+  0% { color: $back_white; }
+  20% { color: $theme_1; }
+  40% { color: $theme_2; }
+  60% { color: $theme_3; }
+  80% { color: $theme_5; }
+  100% { color: $back_white; }
+}
+@keyframes anime-color {
+  0% { color: $back_white; }
+  20% { color: $theme_1; }
+  40% { color: $theme_2; }
+  60% { color: $theme_3; }
+  80% { color: $theme_5; }
+  100% { color: $back_white; }
+}
+
+@-webkit-keyframes anime-transparent {
+  0% { color: $back_white; }
+  50% { color: transparent; }
+  100% { color: $back_white; }
+}
+@keyframes anime-transparent {
+  0% { color: $back_white; }
+  50% { color: transparent; }
+  100% { color: $back_white; }
+}
+
+body {
+  background-color: $slide_back;
+}
+
+.app-desc-wrapper {
+
+  .app-top {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/questions-open.jpg);
+    background-size: cover;
+    background-color: $slide_back;
+    z-index: 1;
+    &__cover {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: $cover_color;
+      // -ms-filter: blur(1px);
+      // filter: blur(1px);
+      .Producer {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        font-size: 2.5rem;
+        font-family: 'Josefin Sans', "Hiragino Kaku Gohtic ProN", Meiryo, sans-serif;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        color: $white_font;
+        text-align: left;
+        // -ms-filter: blur(1px);
+        // filter: blur(1px);
+      }
+      .app-name-1 {
+        position: absolute;
+        top: 30%;
+        left: 3%;
+        font-size: 7rem;
+        font-family: 'Josefin Sans', "Hiragino Kaku Gohtic ProN", Meiryo, sans-serif;
+        letter-spacing: 2px;
+        color: $white_font;
+        // text-align: left;
+        // -ms-filter: blur(1px);
+        // filter: blur(1px);
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        // transform: rotate(180deg);
+        transition: all 1.5s ease-in-out;
+        &.active {
+          left: 90%;
+          color: $back_black;
+          animation: anime-transprent 1.7s ease;
+          -webkit-animation: anime-transprent 1.7s ease;
+        }
+      }
+      .app-name-2 {
+        position: absolute;
+        top: 83.5%;
+        left: 11%;
+        font-size: 7rem;
+        font-family: 'Josefin Sans', "Hiragino Kaku Gohtic ProN", Meiryo, sans-serif;
+        letter-spacing: 2px;
+        color: $white_font;
+        // animation: anime-color 12s ease infinite;
+        // -webkit-animation: anime-color 12s ease infinite;
+        // text-align: left;
+        // -ms-filter: blur(1px);
+        // filter: blur(1px);
+        transition: all 2s ease-in-out;
+        &.active {
+          left: 75%;
+          color: $back_black;
+          animation: anime-transprent 2s ease;
+          -webkit-animation: anime-transprent 2s ease;
+        }
+      }
+    }
+    .trans-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &__left {
+        float: left;
+        width: 50%;
+        height: 100%;
+      }
+      &__right {
+        float: right;
+        width: 50%;
+        height: 100%;
+      }
+    }
+  }
+  .app-desc {
+    margin: 110px auto 0;
+    max-width: 960px;
+    background-color: $slide_back;
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 960px;
+      transform: scale(0.8);
+      -moz-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      &.is-show {
+        transform: scale(1);
+        -moz-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+    &__item {
+      flex: 0 0 auto;
+      width: 20%;
+      height: 90px;
+      font-size: 1.4rem;
+      text-align: left;
+      ul {
+        list-style-type: none;
+        .item-head {
+          display: block;
+          font-size: 1.4rem;
+          color: $same_font;
+          line-height: 30px;
+          letter-spacing: 0.5px;
+        }
+        .item-content {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: $normal_font;
+          line-height: 30px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+    .desc-item {
+      width: 40%;
+      text-align: left;
+      line-height: 25px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .website-link {
+    position: relative;
+    max-width: 960px;
+    margin: 50px auto 210px;
+    p {
+      position: absolute;
+      right: 0;
+      max-width: 960px;
+      z-index: 50;
+      a {
+        color: $normal_font;
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+        font-weight: 800;
+      }
+    }
+  }
+  .app-images {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    z-index: 100;
+    .app-image {
+      margin-bottom: 80px;
+      .image {
+        width: 100%;
+        vertical-align: bottom;
+        transform: scale(0.8);
+        -moz-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      &.is-show .image {
+        transform: scale(1);
+        -moz-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+  }
+  .app-found {
+    position: relative;
+    max-width: 960px;
+    margin: 60px auto 160px;
+    color: white;
+    z-index: 100;
+    text-align: left;
+    transform: scale(0.8);
+    -moz-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &.is-show {
+      transform: scale(1);
+      -moz-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 40px 75px;
+      text-align: left;
+    }
+    &__item {
+      display: flex;
+      margin: 0 0 14px 75px;
+      text-align: left;
+      &__left {
+        font-size: 1.4rem;
+        color: $same_font;
+        text-align: left;
+        min-width: 236px;
+      }
+      &__right {
+        font-size: 1.4rem;
+        color: $normal_font;
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+  }
+}

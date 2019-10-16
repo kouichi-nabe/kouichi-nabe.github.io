@@ -1,0 +1,48 @@
+@import "color";
+
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1068px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.header {
+  /* margin: 0;
+  padding: 0; */
+  position: fixed;
+  top: 10%;
+  right: 8%;
+  z-index: 20000;
+}
+.header-left-content {
+  float: left;
+}
+.header-right-content {
+  float: right;
+}
+.home-btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.link-btn {
+  display: block;
+  padding: 5px 10px;
+  border: solid 1px $white_font;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $white_font;
+  letter-spacing: 1px;
+  transition: all 0.1s ease-in-out;
+  &.active {
+    color: $link_font;
+    border: solid 1px $link_font;
+  }
+}
