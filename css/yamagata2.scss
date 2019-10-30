@@ -1,0 +1,746 @@
+@import "../color2.scss";
+
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1068px)',
+  'xl': 'screen and (min-width: 1180px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+@-webkit-keyframes anime-color {
+  0% { color: transparent; }
+  30% { color: $white; }
+  60% { color: transparent; }
+  100% { color: $white; }
+}
+@keyframes anime-color {
+  0% { color: transparent; }
+  30% { color: $white; }
+  60% { color: transparent; }
+  100% { color: $white; }
+}
+
+
+.head {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: calc(100vh - 20px);
+  &__inner {
+    width: 100%;
+    height: calc(100vh - 20px);
+    background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/head_01.jpeg);
+    background-size: cover;
+
+    &__title-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      h1 {
+        font-size: 8rem;
+        color: transparent;
+        letter-spacing: 0.5;
+      }
+      p {
+        font-size: 1.4rem;
+        color: $white;
+        letter-spacing: 0.5;
+      }
+    }
+  }
+}
+
+.Charms {
+  margin: 100px 20px 0;
+  // width: 100%;
+  // width: 735px;
+  // @include mq(xl){
+  //   width: 1120px;
+  //   // width: calc(100% - 100px);
+  //   margin: 100px 20px 0;
+
+  &__title {
+    &__inner {
+      margin: 0 auto;
+
+      h2 {
+        font-size: 5rem;
+        color: $black;
+        letter-spacing: 0.5;
+      }
+      p {
+        font-size: 1.4rem;
+        color: $black;
+        letter-spacing: 0.5;
+      }
+    }
+  }
+  &__wrapper {
+    margin: 100px 0 0;
+
+    &__inner {
+      display: grid;
+      margin: 0 auto;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      width: 1350px;
+
+      .charm-box {
+        margin: 0 auto 30px;
+        width: 400px;
+        background-color: $white;
+        border-radius: 10px;
+        // transition: all 0.5s ease;
+        filter: drop-shadow(3px 3px 5px $shadow_color);
+        &__head {
+          position: relative;
+          width: 100%;
+          min-width: 300px;
+          height: 350px;
+          display: block;
+          border-radius: 10px;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: all 0.5s ease;
+          }
+          &:hover img {
+            width: 110%;
+            height: 110%;
+          }
+        }
+        &__foot {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          padding: 30px 0 0;
+          border-radius: 10px;
+          background-color: $white;
+          transform: translateY(-5px);
+          z-index: -1;
+          &__inner {
+            padding: 0 20px 20px;
+
+            .charm-title {
+              text-align: left;
+              margin: 0 0 15px;
+              height: 65px;
+              a {
+                display: block;
+                font-size: 2rem;
+                color: $black;
+                margin: 0 0 10px;
+                letter-spacing: 0.5;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                  color: $two;
+                }
+              }
+              p {
+                font-size: 1.4rem;
+                letter-spacing: 0.5;
+                line-height: 1.5;
+              }
+            }
+            .charm-area {
+              display: inline-block;
+              margin: 0 0 10px;
+              padding: 0 10px;
+              font-size: 1.4rem;
+              color: $gray;
+              background-color: $white;
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 125px;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background-color: transparent;
+                border-top: dashed 0.5px $gray;
+                transform: translateY(-5px);
+                z-index: -1;
+              }
+            }
+            .charm-desc {
+              text-align: left;
+              i {
+                display: inline-block;
+                font-size: 1.4rem;
+                color: $two;
+                margin: 0 10px 10px 0;
+              }
+              &__item {
+                display: inline-block;
+                font-size: 1.4rem;
+                margin: 0 10px 10px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__category {
+    margin: 50px 0 0;
+    width: 100%;
+    // width: 735px;
+    // @include mq(xl){
+    //   width: 1120px;
+    // }
+
+    &__title {
+      margin: 0 auto 50px;
+
+      i {
+        display: inline-block;
+        font-size: 2.5rem;
+        margin: 0 20px 0 0;
+      }
+      h2 {
+        display: inline-block;
+        font-size: 2.5rem;
+      }
+    }
+    &__inner {
+      margin: 0 auto;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-between;
+      display: grid;
+      margin: 0 auto;
+      gap: 20px;
+      // grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr) minmax(350px, 1fr);
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      width: 1350px;
+
+      .category-box {
+        margin: 0 auto 20px;
+        width: 150px;
+        height: 100px;
+        border-radius: 10px;
+        filter: drop-shadow(3px 3px 5px $shadow_color);
+        cursor: pointer;
+        &.box1 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/food.jpg);
+          background-size: cover;
+        }
+        &.box2 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/view.jpg);
+          background-size: cover;
+        }
+        &.box3 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/culture.jpg);
+          background-size: cover;
+        }
+        &.box4 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/Sightseeing.jpg);
+          background-size: cover;
+        }
+        &.box5 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/event.jpg);
+          background-size: cover;
+          // width: 335px;
+          // @include mq(xl){
+          //   width: 150px;
+          // }
+        }
+        &.box6 {
+          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/Souvenir.jpg);
+          background-size: cover;
+          // width: 335px;
+          // @include mq(xl){
+          //   width: 150px;
+          // }
+        }
+        &__name {
+          width: 100%;
+          height: 100%;
+          padding: 70px 0 0;
+          background-color: $shadow_color;
+          border-radius: 10px;
+          font-size: 1.6rem;
+          color: $white;
+          letter-spacing: 0.5;
+          transition: all 0.3s ease;
+        }
+        &:hover .category-box__name {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  margin: 150px 0 0;
+  padding: 10px;
+  width: 100%;
+  // height: calc(100vh - 20px);
+
+  &__title {
+    margin: 0 auto 70px;
+    h2 {
+      font-size: 4rem;
+      color: $black;
+      letter-spacing: 0.5;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    margin: 0 auto;
+    width: 1050px;
+    height: 550px;
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      width: 450px;
+      height: 100%;
+
+      img {
+        position: relative;
+        display: block;
+        width: 450px;
+        // border-radius: 50% 40% 50% 40%;
+        // border-radius: 15%;
+        transform: rotate(-5deg);
+        transition: all 0.7s cubic-bezier(0.71, 0.19, 0.6, 1.62);
+        filter: drop-shadow(2px 2px 4px $shadow_color);
+
+        &:hover {
+          transform: rotate(0);
+        }
+      }
+    }
+    &__content {
+      position: relative;
+
+      &__title {
+        position: absolute;
+        top: 30px;
+        left: 560px;
+        width: 400px;
+        font-size: 2rem;
+        color: $black;
+        line-height: 1.3;
+
+        span {
+          font-size: 5rem;
+        }
+      }
+      &__text-1 {
+        position: absolute;
+        top: 170px;
+        left: 560px;
+        width: 400px;
+        line-height: 1.7;
+        span {
+          background: linear-gradient(transparent 80%, $cherry 80%);
+        }
+      }
+      &__text-2 {
+        position: absolute;
+        top: 350px;
+        left: 52%;
+        transform: translateX(-50%);
+        width: 820px;
+        line-height: 1.7;
+        span {
+          background: linear-gradient(transparent 80%, $leaf 80%);
+        }
+      }
+    }
+  }
+}
+
+.news {
+  margin: 50px auto 0;
+  padding: 10px;
+  width: 100%;
+  // width: 1050px;
+
+  &__title {
+    margin: 0 auto 60px;
+    h2 {
+      font-size: 4rem;
+      color: $black;
+      letter-spacing: 0.5;
+    }
+  }
+  &__inner {
+    display: grid;
+    margin: 0 auto;
+    width: 1350px;
+    gap: 30px;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+
+    .news-box {
+      display: block;
+      height: 200px;
+      border-radius: 10px;
+      background-color: $white2;
+      background-size: 100%;
+      transition: all 0.3s ease-in-out;
+      filter: drop-shadow(2px 2px 4px $shadow_color);
+
+      &__inner {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: $shadow_color;
+        transition: all 0.3s ease-in-out;
+
+        h4 {
+          font-size: 1.6rem;
+          color: $white;
+          letter-spacing: 0.5;
+          line-height: 1.4;
+        }
+        time {
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+          font-size: 1.2rem;
+          color: $white;
+          letter-spacing: 0.5;
+
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+      &.box1 {
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box1.jpg);
+        background-position: center;
+      }
+      &.box2 {
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box2.jpg);
+        background-position: center;
+      }
+      &.box3 {
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box3.jpg);
+        background-position: center;
+      }
+      &.box4 {
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box4.jpg);
+        background-position: center;
+      }
+      &.box5 {
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box5.jpg);
+        background-position: center;
+      }
+      &.box6{
+        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box5.jpg);
+        background-position: center;
+      }
+      &:hover {
+        background-size: 115%;
+      }
+    }
+  }
+  .news-more {
+    display: inline-block;
+    position: relative;
+    margin: 50px auto 0;
+    padding: 19px 22px;
+    transition: all .2s ease;
+    color: $black;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 28px;
+      background: rgba($gray,.5);
+      width: 56px;
+      height: 56px;
+      transition: all .3s ease;
+    }
+    span {
+      position: relative;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 900;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: $black;
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all .3s ease;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+        background: rgba($gray,1);
+      }
+      svg {}
+        transform: translateX(0);
+      }
+    &:active {
+      transform: scale(.96);
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 0;
+  width: 100%;
+  height: 250px;
+  background-color: $white3;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      margin-right: 20px;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    &__content {
+
+      .site-desc {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: left;
+      }
+      .my-name {
+        line-height: 1.5;
+        font-size: 1.4rem;
+        text-align: left;
+      }
+      .my-desc {
+        line-height: 1.5;
+        font-size: 1.4rem;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .Charms__wrapper__inner {
+    width: 100%;
+  }
+  .Charms__category__inner {
+    width: 100%;
+  }
+  .news__inner {
+    width: 100%;
+  }
+}
+
+@media(max-width: 1050px){
+  .news__inner {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+@media(max-width: 870px){
+  .Charms__wrapper{
+    margin: 100px auto 0;
+  }
+  .Charms__wrapper__inner {
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .Charms__category__inner {
+    margin: 0 auto;
+    display: grid;
+    margin: 0 auto;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 767px){
+  .head {
+    padding: 0;
+    height: 100vh;
+    &__inner {
+      height: 100vh;
+      &__title-box {
+        h1 {
+          font-size: 4rem;
+        }
+        p {
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  .Charms {
+    margin: 100px 0 0;
+    &__wrapper {
+      margin: 50px 0;
+      &__inner {
+        margin: 0 auto;
+        gap: 0;
+        grid-template-columns: 1fr;
+        .charm-box {
+          margin: 0;
+          width: 100%;
+          min-width: 350px;
+          border-radius: 0;
+          filter: drop-shadow(3px 3px 5px transparent);
+          &__head {
+            border-radius: 0;
+            img {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+    &__category {
+      &__inner {
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        .category-box {
+          margin: 0 auto 15px;
+        }
+      }
+    }
+  }
+  .about {
+    margin: 100px 0 0;
+    &__title {
+      margin: 0 auto 40px;
+    }
+    &__inner {
+      width: auto;
+      height: auto;
+      &__image {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        img {
+          position: relative;
+          display: block;
+          width: 100%;
+          transform: rotate(0);
+          filter: drop-shadow(2px 2px 4px $shadow_color);
+        }
+      }
+      &__content {
+        &__title {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: 25px 0 25px;
+          width: 100%;
+          letter-spacing: 0.5;
+          span {
+            font-size: 3rem;
+          }
+        }
+        &__text-1, &__text-2 {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          letter-spacing: 0.5;
+          text-align: left;
+        }
+        &__text-2{
+          margin: 15px 0 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .news {
+    margin: 100px 0 0;
+    padding: 0;
+
+    &__inner {
+      display: block;
+
+      .news-box {
+        margin: 0 0 15px;
+        height: 130px;
+
+        &__inner {
+          height: 130px;
+        }
+      }
+    }
+  }
+  .footer {
+    display: block;
+    margin: 70px 0 0;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+
+    &__inner {
+      display: block;
+
+      &__image {
+        margin: 10px auto;
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      &__content {
+        .site-desc {
+          font-size: 1.4rem;
+        }
+        .my-name, .my-desc {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.anime-color {
+  animation: anime-color 4s ease-in-out 0s 1 normal forwards;
+}

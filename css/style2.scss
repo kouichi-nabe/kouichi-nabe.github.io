@@ -1,0 +1,55 @@
+@import "color";
+
+/* --------------------------------
+ * base
+ * -------------------------------- */
+html {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  background-color: $white2;
+  color: #333;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Rubik', 'M PLUS 1p', Meiryo, sans-serif;
+  // cursor: none;
+}
+@media (min-width: 992px) {
+  body {
+      font-size: 1.6rem;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+      font-size: 1.8rem;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  // cursor: none;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1068px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
