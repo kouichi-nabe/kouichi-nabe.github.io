@@ -1,4 +1,4 @@
-@import "../color2.scss";
+@import "color2.scss";
 
 $breakpoints: (
   'sm': 'screen and (min-width: 400px)',
@@ -34,7 +34,7 @@ $breakpoints: (
   &__inner {
     width: 100%;
     height: calc(100vh - 20px);
-    background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/head_01.jpeg);
+    background-image: url(../images/head_01.jpeg);
     background-size: cover;
 
     &__title-box {
@@ -237,23 +237,23 @@ $breakpoints: (
         filter: drop-shadow(3px 3px 5px $shadow_color);
         cursor: pointer;
         &.box1 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/food.jpg);
+          background-image: url(../images/food.jpg);
           background-size: cover;
         }
         &.box2 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/view.jpg);
+          background-image: url(../images/view.jpg);
           background-size: cover;
         }
         &.box3 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/culture.jpg);
+          background-image: url(../images/culture.jpg);
           background-size: cover;
         }
         &.box4 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/Sightseeing.jpg);
+          background-image: url(../images/Sightseeing.jpg);
           background-size: cover;
         }
         &.box5 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/event.jpg);
+          background-image: url(../images/event.jpg);
           background-size: cover;
           // width: 335px;
           // @include mq(xl){
@@ -261,7 +261,7 @@ $breakpoints: (
           // }
         }
         &.box6 {
-          background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/Souvenir.jpg);
+          background-image: url(../images/Souvenir.jpg);
           background-size: cover;
           // width: 335px;
           // @include mq(xl){
@@ -430,27 +430,27 @@ $breakpoints: (
         }
       }
       &.box1 {
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box1.jpg);
+        background-image: url(../images/box1.jpg);
         background-position: center;
       }
       &.box2 {
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box2.jpg);
+        background-image: url(../images/box2.jpg);
         background-position: center;
       }
       &.box3 {
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box3.jpg);
+        background-image: url(../images/box3.jpg);
         background-position: center;
       }
       &.box4 {
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box4.jpg);
+        background-image: url(../images/box4.jpg);
         background-position: center;
       }
       &.box5 {
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box5.jpg);
+        background-image: url(../images/box5.jpg);
         background-position: center;
       }
       &.box6{
-        background-image: url(/Users/watanabe_kouichi/my_apps/my-site/site-1/images/box5.jpg);
+        background-image: url(../images/box5.jpg);
         background-position: center;
       }
       &:hover {
