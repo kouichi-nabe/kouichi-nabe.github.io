@@ -36,6 +36,7 @@ $breakpoints: (
     height: calc(100vh - 20px);
     background-image: url(../images/head_01.jpeg);
     background-size: cover;
+    background-position: center;
 
     &__title-box {
       position: absolute;
