@@ -23,12 +23,6 @@ $(function(){
     }
   }
 
-  var ok = function(){
-    console.log("man")
-  }
-
   setInterval(chagneImage, 5000);
-  setInterval(ok, 1000);
 
-  // headInner.css({ backgroundImage: "url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_02.jpg)" });
 })
