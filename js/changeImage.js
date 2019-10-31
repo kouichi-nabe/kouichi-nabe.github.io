@@ -2,11 +2,11 @@ $(function(){
   const headInner = $('.head__inner');
 
   const images = [
-    'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_01.jpeg)',
-    'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_02.jpg)',
-    'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_03.jpg)',
-    'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_04.jpeg)',
-    'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_05.jpg)'
+    'url(https://kouichi-nabe.github.io/images/head_01.jpeg)',
+    'url(https://kouichi-nabe.github.io/images/head_02.jpg)',
+    'url(https://kouichi-nabe.github.io/images/head_03.jpg)',
+    'url(https://kouichi-nabe.github.io/images/head_04.jpeg)',
+    'url(https://kouichi-nabe.github.io/images/head_05.jpg)'
   ];
 
   let num = 0;
