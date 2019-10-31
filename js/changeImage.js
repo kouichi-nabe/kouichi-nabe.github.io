@@ -2,11 +2,11 @@ $(function(){
   const headInner = $('.head__inner');
 
   const images = [
-    'url(../images/head_01.jpeg)',
-    'url(../images/head_02.jpg)',
-    'url(../images/head_03.jpg)',
-    'url(../images/head_04.jpeg)',
-    'url(../images/head_05.jpg)'
+    'url(https://kouichi-nabe.github.io/images/head_01.jpeg)',
+    'url(https://kouichi-nabe.github.io/images/head_02.jpg)',
+    'url(https://kouichi-nabe.github.io/images/head_03.jpg)',
+    'url(https://kouichi-nabe.github.io/images/head_04.jpeg)',
+    'url(https://kouichi-nabe.github.io/images/head_05.jpg)'
   ];
 
   let num = 0;
