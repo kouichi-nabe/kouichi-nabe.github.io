@@ -9,8 +9,6 @@ $(function(){
     'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_05.jpg)'
   ];
 
-  headInner.css({ backgroundImage: 'url(file:///Users/watanabe_kouichi/kouichi-nabe.github.io/images/head_03.jpg)' });
-
   let num = 0;
 
   var chagneImage = function(){
