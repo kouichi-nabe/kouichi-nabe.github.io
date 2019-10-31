@@ -11,7 +11,7 @@ $(window).on('load', stopload());
 //   $('.loading').delay(400).fadeOut(300);
 // }
 function stopload(){
-  $('.loading').delay(400).fadeOut(300);
+  $('.loading').delay(500).fadeOut(400);
 }
 
 setTimeout(stopload() ,1500);
