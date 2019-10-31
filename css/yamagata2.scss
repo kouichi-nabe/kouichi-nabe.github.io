@@ -25,6 +25,15 @@ $breakpoints: (
   100% { color: $white; }
 }
 
+@-webkit-keyframes anime-fade {
+  0% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+@keyframes anime-fade {
+  0% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
 
 .head {
   position: relative;
@@ -32,11 +41,13 @@ $breakpoints: (
   width: 100%;
   height: calc(100vh - 20px);
   &__inner {
+    position: relative;
     width: 100%;
     height: calc(100vh - 20px);
     background-image: url(../images/head_01.jpeg);
     background-size: cover;
     background-position: center;
+    animation: anime-fade 2.5s ease-in-out 0s infinite alternate-reverse forwards;
 
     &__title-box {
       position: absolute;
@@ -145,7 +156,6 @@ $breakpoints: (
                 color: $black;
                 margin: 0 0 10px;
                 letter-spacing: 0.5;
-                cursor: pointer;
                 transition: all 0.3s ease;
                 &:hover {
                   color: $two;
@@ -231,12 +241,12 @@ $breakpoints: (
       width: 1350px;
 
       .category-box {
+        display: block;
         margin: 0 auto 20px;
         width: 150px;
         height: 100px;
         border-radius: 10px;
         filter: drop-shadow(3px 3px 5px $shadow_color);
-        cursor: pointer;
         &.box1 {
           background-image: url(../images/food.jpg);
           background-size: cover;
